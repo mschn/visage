@@ -5,6 +5,14 @@ export interface VisageConfig {
   faceFill: string;
   eyesFill: string;
   hairFill: string;
+  strokeWidth: number;
+}
+
+export interface SvgProps extends VisageConfig {
+  faceStroke: string;
+  bodyStroke: string;
+  mouthFill: string;
+  hairStroke: string;
 }
 
 export const VisageColors = {
