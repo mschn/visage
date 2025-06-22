@@ -1,0 +1,23 @@
+import { visageEditor } from "./editor";
+import "./style.css";
+import { visage, type VisageConfig } from "./visage";
+
+let config: VisageConfig = {
+  rounded: true,
+  backgroundFill: "#e1eeff",
+  bodyFill: "#4000e3",
+  faceFill: "#e9c59e",
+  eyesFill: "#1c766d",
+  hairFill: "#812f1b",
+};
+
+function render() {
+  visage("#visage", config);
+}
+
+visageEditor("#editor", config, (cfg) => {
+  config = { ...config, ...cfg };
+  render();
+});
+
+render();
