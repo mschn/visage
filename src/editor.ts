@@ -14,7 +14,7 @@ export function visageEditor(
   const editor = document.createElement("div");
   editor.classList.add("visage-editor");
   editor.append(
-    getRoundedControl(cfg, onChange),
+    getStrokeWidthControl(cfg, onChange),
     getColorControl(cfg, onChange, "backgroundFill", "Background"),
     getColorControl(cfg, onChange, "bodyFill", "Body"),
     getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
@@ -24,23 +24,20 @@ export function visageEditor(
   element?.appendChild(editor);
 }
 
-function getRoundedControl(
-  cfg: VisageConfig,
-  onChange: VisageEditorCb
-): HTMLElement {
-  const checkbox = document.createElement("input");
-  checkbox.type = "checkbox";
-  checkbox.id = "editor-rounded";
-  checkbox.checked = cfg.rounded;
-  checkbox.addEventListener("change", () => {
-    onChange({ rounded: checkbox.checked });
-  });
+function getStrokeWidthControl(cfg: VisageConfig, onChange: VisageEditorCb) {
+  const input = document.createElement("input");
+  input.type = "number";
+  input.id = "editor-stroke-width";
+  input.value = `${cfg.strokeWidth}`;
+  input.addEventListener("change", () =>
+    onChange({ strokeWidth: Number.parseFloat(input.value) })
+  );
   const label = document.createElement("label");
-  label.htmlFor = "editor-rounded";
-  label.innerHTML = "Rounded";
+  label.htmlFor = "editor-stroke-width";
+  label.innerHTML = "Stroke width";
   const div = document.createElement("div");
   div.classList.add("formgroup");
-  div.append(label, checkbox);
+  div.append(label, input);
   return div;
 }
 

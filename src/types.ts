@@ -1,5 +1,4 @@
 export interface VisageConfig {
-  rounded: boolean;
   backgroundFill: string;
   bodyFill: string;
   faceFill: string;

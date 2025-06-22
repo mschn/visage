@@ -18,7 +18,7 @@ export function visage(selector: string, cfg: VisageConfig) {
   };
 
   element.innerHTML = `
-      <div class="visage ${cfg.rounded ? "rounded" : ""} ">
+      <div class="visage">
         <svg width="100%" height="100%" viewBox="0 0 200 200">
           ${background(svgProps)}
           ${neck(svgProps)}
@@ -42,19 +42,19 @@ function background({ backgroundFill }: SvgProps) {
 function neck({ faceFill, faceStroke, strokeWidth }: SvgProps) {
   return `
     <path
-      style="display:inline;fill:${faceFill};fill-opacity:1;stroke:${faceStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-      d="m 76.005531,127.85816 c 0.248293,17.35831 -0.682933,28.81046 -6.168924,33.62064 6.410769,11.05354 19.352892,13.41467 31.461513,13.26319 9.96313,0.15067 19.11036,-2.33567 28.22283,-12.80052 -3.73532,-2.615 -7.616,-16.61344 -7.86538,-33.77486 z"
-      id="path23"
-      sodipodi:nodetypes="cccccc"
-      inkscape:label="neck" />
+       style="display:inline;fill:${faceFill};fill-opacity:1;stroke:${faceStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
+       d="m 76.005531,127.85816 c 0.248293,17.35831 0.772081,30.6623 -4.71391,35.47248 -6.030282,5.2788 -41.969419,4.60869 -40.584978,10.33317 4.263895,17.63062 18.077428,24.34964 38.913145,24.13375 12.258062,-0.12701 38.280092,1.44163 60.095832,0.18305 17.91719,-1.03368 36.26672,-3.16112 36.47165,-24.87897 0.0512,-5.43076 -34.01524,-3.57206 -39.44407,-10.23425 -3.20623,-5.26048 -4.83825,-17.53936 -5.08763,-34.70078 z"
+       id="path23"
+       sodipodi:nodetypes="ccssssccc"
+       inkscape:label="neck" />
   `;
 }
 
 function body({ bodyFill, bodyStroke, strokeWidth }: SvgProps) {
   return `
     <path
-       style="fill:${bodyFill};fill-opacity:1;stroke:${bodyStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-       d="m 72.921069,154.69298 c 2.454068,10.11101 16.587666,15.27122 27.760161,15.42231 11.01469,0.34009 20.77219,-4.79753 25.90948,-14.80542 15.62794,1.95349 42.66762,7.3185 47.03805,10.17873 5.63545,4.6363 13.00856,30.38268 13.88009,40.56068 L 14.933181,205.5866 c 0.107567,-8.38381 7.310716,-36.11098 12.800518,-39.94378 4.921763,-3.66046 26.793482,-9.30132 45.18737,-10.94984 z"
+       style="display:inline;fill:${bodyFill};fill-opacity:1;stroke:${bodyStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
+       d="m 72.673423,158.65532 c 2.454068,10.11101 16.587666,15.27122 27.760167,15.42231 11.01469,0.34009 20.77219,-4.79753 25.90948,-14.80542 15.62794,1.95349 42.66762,7.3185 47.03805,10.17873 5.63545,4.6363 13.00856,30.38268 13.88009,40.56068 L 14.685535,209.54894 c 0.107567,-8.38381 7.310716,-36.11098 12.800518,-39.94378 4.921763,-3.66046 26.793482,-9.30132 45.18737,-10.94984 z"
        id="path24"
        inkscape:label="shirt"
        sodipodi:nodetypes="cccccccc" />
@@ -116,7 +116,7 @@ function face({ faceFill, faceStroke, strokeWidth }: SvgProps) {
   return `
     <path
        style="display:inline;fill:${faceFill};fill-opacity:1;stroke:${faceStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-       d="m 53.58118,85.540124 c -0.176384,28.278866 21.815641,66.387686 46.84563,65.710786 26.69502,0.27134 44.89621,-37.08713 45.02374,-65.859896 C 145.01732,53.007973 132.02808,30.652511 100.71865,31.265329 70.368937,31.619344 53.506084,48.866397 53.58118,85.540124 Z"
+       d="m 53.58118,85.540124 c -0.176384,28.278866 21.815641,66.387686 46.84563,65.710786 26.69502,0.27134 44.89621,-37.08713 45.02374,-65.859896 C 145.01732,53.007973 132.02808,30.652511 100.71865,31.265329 67.149539,30.381114 53.506084,48.866397 53.58118,85.540124 Z"
        id="path5"
        sodipodi:nodetypes="ccccc"
        inkscape:label="face" />

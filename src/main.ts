@@ -3,7 +3,6 @@ import "./style.css";
 import { visage, type VisageConfig } from "./visage";
 
 let config: VisageConfig = {
-  rounded: true,
   backgroundFill: "#e1eeff",
   bodyFill: "#4000e3",
   faceFill: "#e9c59e",
