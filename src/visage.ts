@@ -1,4 +1,6 @@
 import { alterHexColor } from "./colors";
+import { eyes } from "./layers/eyes";
+import { mouth } from "./layers/mouth";
 import type { SvgProps, VisageConfig } from "./types";
 
 export * from "./types";
@@ -120,100 +122,6 @@ function face({ faceFill, faceStroke, strokeWidth }: SvgProps) {
        id="path5"
        sodipodi:nodetypes="ccccc"
        inkscape:label="face" />
-  `;
-}
-
-function mouth({ mouthFill, faceStroke, strokeWidth }: SvgProps) {
-  return `
-    <g
-       id="g33"
-       inkscape:label="mouth">
-      <path
-         style="fill:${mouthFill};fill-opacity:1;stroke:none;stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-         d="m 80.698632,126.42141 c 4.653579,-2.614 11.106088,-6.2003 13.596546,-6.23339 5.584534,1.59891 8.322732,1.82986 13.535842,-0.067 2.46281,0.37826 7.15978,3.65215 11.47209,6.23338 -7.76156,1.78081 -12.16347,4.38847 -18.51315,4.28964 -6.138739,-0.10117 -10.499341,-2.46497 -20.091328,-4.22264 z"
-         id="path12"
-         inkscape:label="mouth-back"
-         sodipodi:nodetypes="cccccc" />
-      <path
-         style="display:inline;fill:none;fill-opacity:1;stroke:${faceStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-         d="m 81.611355,125.68029 c 6.507008,1.17156 9.99164,-1.2247 12.697652,-1.0264 2.602226,0.45191 4.675426,0.45789 6.764943,0.54572 2.1926,0.044 4.32094,-0.4483 6.82005,-0.91675 2.16422,0.0111 5.76775,2.48343 10.51555,1.27965"
-         id="path11"
-         sodipodi:nodetypes="ccccc"
-         inkscape:label="mouth-front" />
-    </g>
-  `;
-}
-
-function eyes({ eyesFill, faceStroke, strokeWidth }: SvgProps) {
-  return `
-    <g
-       id="g25"
-       inkscape:label="eye-left"
-       transform="matrix(0.84363854,0,0,0.83536032,14.406408,9.5140885)">
-      <path
-         style="display:inline;fill:#ffffff;fill-opacity:1;stroke:${faceStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-         d="m 90.997114,91.6894 c -2.150123,-3.575432 -6.232833,-6.50518 -11.412509,-7.017154 -8.019037,0.0079 -12.47229,4.537228 -15.576535,7.634044 5.198644,1.895461 10.442504,3.410619 16.039205,3.315796 4.38569,-0.573972 7.974157,-1.746316 10.949839,-3.932686 z"
-         id="path17"
-         sodipodi:nodetypes="ccccc"
-         inkscape:label="eye-left" />
-      <circle
-         style="display:inline;fill:${eyesFill};fill-opacity:1;stroke:none;stroke-width:${strokeWidth};stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="path5-1"
-         cx="-78.917717"
-         cy="90.381569"
-         transform="scale(-1,1)"
-         inkscape:label="eye-pupil-left"
-         r="4.7999616" />
-      <circle
-         style="display:inline;fill:#000000;fill-opacity:1;stroke-width:${strokeWidth};stroke-linecap:round"
-         id="path8"
-         cx="78.965813"
-         cy="90.309639"
-         inkscape:label="eye-pupil-left"
-         r="2.6639156" />
-      <ellipse
-         style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-         id="path18"
-         cx="77.756042"
-         cy="88.706573"
-         rx="0.6102773"
-         ry="0.5876919"
-         inkscape:label="eye-pupil-hl-left" />
-    </g>
-    <g
-       id="g25-5"
-       inkscape:label="eye-left"
-       transform="matrix(-0.84363854,0,0,0.83536032,184.84424,9.5560391)">
-      <path
-         style="display:inline;fill:#ffffff;fill-opacity:1;stroke:${faceStroke};stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-         d="m 90.997114,91.6894 c -2.150123,-3.575432 -6.232833,-6.50518 -11.412509,-7.017154 -8.019037,0.0079 -12.47229,4.537228 -15.576535,7.634044 5.198644,1.895461 10.442504,3.410619 16.039205,3.315796 4.38569,-0.573972 7.974157,-1.746316 10.949839,-3.932686 z"
-         id="path17-1"
-         sodipodi:nodetypes="ccccc"
-         inkscape:label="eye-left" />
-      <circle
-         style="display:inline;fill:${eyesFill};fill-opacity:1;stroke:none;stroke-width:${strokeWidth};stroke-linecap:round;stroke-dasharray:none;stroke-opacity:1"
-         id="path5-1-4"
-         cx="-78.917717"
-         cy="90.381569"
-         transform="scale(-1,1)"
-         inkscape:label="eye-pupil-left"
-         r="4.7999616" />
-      <circle
-         style="display:inline;fill:#000000;fill-opacity:1;stroke-width:${strokeWidth};stroke-linecap:round"
-         id="path8-6"
-         cx="78.965813"
-         cy="90.309639"
-         inkscape:label="eye-pupil-left"
-         r="2.6639156" />
-      <ellipse
-         style="display:inline;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:${strokeWidth};stroke-linecap:round;stroke-opacity:1"
-         id="path18-0"
-         cx="80.212059"
-         cy="88.739212"
-         rx="0.6102773"
-         ry="0.5876919"
-         inkscape:label="eye-pupil-hl-left" />
-    </g>
   `;
 }
 

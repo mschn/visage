@@ -1,6 +1,10 @@
+import { alterHexColor } from "./colors";
+import { mouth } from "./layers/mouth";
 import {
   VisageColors,
+  VisageVariants,
   type StringKeys,
+  type SvgProps,
   type VisageConfig,
   type VisageEditorCb,
 } from "./types";
@@ -19,7 +23,8 @@ export function visageEditor(
     getColorControl(cfg, onChange, "bodyFill", "Body"),
     getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
     getColorChoiceControl(cfg, onChange, "eyesFill", "Eyes", VisageColors.eyes),
-    getColorChoiceControl(cfg, onChange, "hairFill", "Hair", VisageColors.hair)
+    getColorChoiceControl(cfg, onChange, "hairFill", "Hair", VisageColors.hair),
+    getMouthVariantControl(cfg, onChange)
   );
   element?.appendChild(editor);
 }
@@ -88,6 +93,45 @@ function getColorChoiceControl(
       onChange({ [key]: color });
     });
     div.appendChild(button);
+  }
+
+  return div;
+}
+
+function getMouthVariantControl(cfg: VisageConfig, onChange: VisageEditorCb) {
+  const label = document.createElement("label");
+  label.innerHTML = "Mouth";
+  const div = document.createElement("div");
+  div.classList.add("formgroup");
+  div.append(label);
+
+  const svgProps: SvgProps = {
+    ...cfg,
+    faceStroke: alterHexColor(cfg.faceFill, 0.2),
+    bodyStroke: alterHexColor(cfg.bodyFill),
+    hairStroke: alterHexColor(cfg.hairFill, -0.1),
+    mouthFill: alterHexColor(cfg.faceFill, 0.1),
+  };
+
+  for (let i = 0; i < VisageVariants.mouth; i++) {
+    const preview = document.createElement("button");
+    preview.setAttribute("data-preview", "mouth");
+    if (i + 1 === cfg.mouthVariant) {
+      preview.classList.add("selected");
+    }
+    preview.addEventListener("click", () => {
+      onChange({ mouthVariant: i + 1 });
+      const previews = document.querySelectorAll("button[data-preview=mouth");
+      for (const preview of previews) {
+        preview.classList.remove("selected");
+      }
+      preview.classList.add("selected");
+    });
+    preview.innerHTML = `<svg width=50 height=20 viewBox="80 120 40 10">
+      ${mouth({ ...svgProps, mouthVariant: i + 1 })}
+    </svg>`;
+
+    div.appendChild(preview);
   }
 
   return div;

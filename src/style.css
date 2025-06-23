@@ -24,10 +24,16 @@
     }
   }
 
-  button.choice {
-    height: 2rem;
-    width: 2rem;
-    border-radius: 100%;
-    cursor: pointer;
+  button {
+    &.selected {
+      border: 2px solid blue;
+    }
+
+    &.choice {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 100%;
+      cursor: pointer;
+    }
   }
 }

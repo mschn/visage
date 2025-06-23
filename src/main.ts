@@ -9,6 +9,7 @@ let config: VisageConfig = {
   eyesFill: "#1c766d",
   hairFill: "#812f1b",
   strokeWidth: 1.5,
+  mouthVariant: 2,
 };
 
 function render() {
