@@ -1,8 +1,10 @@
 import { alterHexColor } from "./colors";
+import { eyes } from "./layers/eyes";
 import { mouth } from "./layers/mouth";
 import {
   VisageColors,
   VisageVariants,
+  type NumberKeys,
   type StringKeys,
   type SvgProps,
   type VisageConfig,
@@ -24,7 +26,30 @@ export function visageEditor(
     getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
     getColorChoiceControl(cfg, onChange, "eyesFill", "Eyes", VisageColors.eyes),
     getColorChoiceControl(cfg, onChange, "hairFill", "Hair", VisageColors.hair),
-    getMouthVariantControl(cfg, onChange)
+    getVariantControl(
+      cfg,
+      onChange,
+      "Eyes",
+      "eyesVariant",
+      (
+        svgProps: SvgProps,
+        variant: number
+      ) => `<svg width=50 height=20 viewBox="65 80 30 10">
+      ${eyes({ ...svgProps, eyesVariant: variant })}
+    </svg>`
+    ),
+    getVariantControl(
+      cfg,
+      onChange,
+      "Mouth",
+      "mouthVariant",
+      (
+        svgProps: SvgProps,
+        variant: number
+      ) => `<svg width=50 height=20 viewBox="80 120 40 10">
+      ${mouth({ ...svgProps, mouthVariant: variant })}
+    </svg>`
+    )
   );
   element?.appendChild(editor);
 }
@@ -98,9 +123,15 @@ function getColorChoiceControl(
   return div;
 }
 
-function getMouthVariantControl(cfg: VisageConfig, onChange: VisageEditorCb) {
+function getVariantControl(
+  cfg: VisageConfig,
+  onChange: VisageEditorCb,
+  labelText: string,
+  key: NumberKeys<VisageConfig>,
+  previewCb: (svgProps: SvgProps, variant: number) => string
+) {
   const label = document.createElement("label");
-  label.innerHTML = "Mouth";
+  label.innerHTML = labelText;
   const div = document.createElement("div");
   div.classList.add("formgroup");
   div.append(label);
@@ -111,25 +142,27 @@ function getMouthVariantControl(cfg: VisageConfig, onChange: VisageEditorCb) {
     bodyStroke: alterHexColor(cfg.bodyFill),
     hairStroke: alterHexColor(cfg.hairFill, -0.1),
     mouthFill: alterHexColor(cfg.faceFill, 0.1),
+    faceFill: "white",
   };
 
   for (let i = 0; i < VisageVariants.mouth; i++) {
     const preview = document.createElement("button");
-    preview.setAttribute("data-preview", "mouth");
-    if (i + 1 === cfg.mouthVariant) {
+    preview.setAttribute("data-preview", key);
+    if (i + 1 === cfg[key]) {
       preview.classList.add("selected");
     }
     preview.addEventListener("click", () => {
-      onChange({ mouthVariant: i + 1 });
-      const previews = document.querySelectorAll("button[data-preview=mouth");
+      onChange({ [key]: i + 1 });
+      const previews = document.querySelectorAll(`button[data-preview=${key}`);
       for (const preview of previews) {
         preview.classList.remove("selected");
       }
       preview.classList.add("selected");
     });
-    preview.innerHTML = `<svg width=50 height=20 viewBox="80 120 40 10">
-      ${mouth({ ...svgProps, mouthVariant: i + 1 })}
-    </svg>`;
+    preview.innerHTML = previewCb(svgProps, i + 1);
+    // preview.innerHTML = `<svg width=50 height=20 viewBox="80 120 40 10">
+    //   ${mouth({ ...svgProps, mouthVariant: i + 1 })}
+    // </svg>`;
 
     div.appendChild(preview);
   }
