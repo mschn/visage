@@ -4,8 +4,104 @@
   box-shadow: 2px 2px 5px 1px #0000004d;
   border-radius: 100%;
   overflow: hidden;
+
+  svg {
+    width: 100% !important;
+    height: 100% !important;
+    background-color: var(--backgroundFill);
+
+    * {
+      stroke-width: var(--strokeWidth) !important;
+    }
+
+    #shirt {
+      fill: var(--bodyFill) !important;
+      stroke: var(--bodyStroke) !important;
+    }
+
+    #hair {
+      stroke: var(--hairStroke) !important;
+      fill: var(--hairFill) !important;
+    }
+
+    #eyebrows {
+      stroke: var(--hairStroke) !important;
+      fill: var(--hairFill) !important;
+    }
+
+    #face {
+      stroke: var(--faceStroke) !important;
+      fill: var(--faceFill) !important;
+    }
+
+    #neck {
+      stroke: var(--faceStroke) !important;
+      fill: var(--faceFill) !important;
+    }
+
+    [id^="ear-"] {
+      stroke: var(--faceStroke) !important;
+      fill: var(--faceFill) !important;
+    }
+
+    [id^="mouth-front"] {
+      stroke: var(--faceStroke) !important;
+    }
+
+    [id^="mouth-back"] {
+      fill: var(--mouthFill) !important;
+    }
+
+    [id^="eye-white"] {
+      stroke: var(--faceStroke) !important;
+    }
+
+    [id^="eye-mask"] {
+      fill: var(--faceFill) !important;
+    }
+
+    [id^="eye-iris"] {
+      fill: var(--eyeFill) !important;
+    }
+
+    [id^="eye-outline"] {
+      stroke: var(--faceStroke) !important;
+    }
+
+    #nose {
+      stroke: var(--faceStroke) !important;
+    }
+  }
 }
 
+/* Eyes variants */
+[id^="eyes-"] {
+  display: none !important;
+}
+
+[data-eyes-variant="1"] #eyes-1 {
+  display: inline !important;
+}
+
+[data-eyes-variant="2"] #eyes-2 {
+  display: inline !important;
+}
+
+/* Mouth variants */
+#mouth-1, #mouth-2 {
+  display: none !important;
+}
+
+[data-mouth-variant="1"] #mouth-1 {
+  display: inline !important;
+}
+
+[data-mouth-variant="2"] #mouth-2 {
+  display: inline !important;
+}
+
+
+/* Editor */
 .visage-editor {
   border: 1px solid #ccc;
   border-radius: 0.5rem;

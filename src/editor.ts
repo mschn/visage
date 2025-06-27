@@ -1,6 +1,5 @@
 import { alterHexColor } from "./colors";
-import { eyes } from "./layers/eyes";
-import { mouth } from "./layers/mouth";
+import { svg } from "./svg";
 import {
   VisageColors,
   VisageVariants,
@@ -16,7 +15,19 @@ export function visageEditor(
   cfg: VisageConfig,
   onChange: VisageEditorCb
 ) {
+  const cb = (config: Partial<VisageConfig>) => {
+    render(selector, { ...cfg, ...config }, cb);
+    onChange(config);
+  };
+  render(selector, cfg, cb);
+}
+
+function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
   const element = document.querySelector(selector);
+  if (!element) {
+    return;
+  }
+  element.innerHTML = "";
   const editor = document.createElement("div");
   editor.classList.add("visage-editor");
   editor.append(
@@ -31,24 +42,22 @@ export function visageEditor(
       onChange,
       "Eyes",
       "eyesVariant",
-      (
-        svgProps: SvgProps,
-        variant: number
-      ) => `<svg width=50 height=20 viewBox="65 80 30 10">
-      ${eyes({ ...svgProps, eyesVariant: variant })}
-    </svg>`
+      (_svgProps: SvgProps, variant: number) => {
+        return `<div data-eyes-variant="${variant}">
+          ${svg("50", "20", "65 76 30 10")}
+        <div>`;
+      }
     ),
     getVariantControl(
       cfg,
       onChange,
       "Mouth",
       "mouthVariant",
-      (
-        svgProps: SvgProps,
-        variant: number
-      ) => `<svg width=50 height=20 viewBox="80 120 40 10">
-      ${mouth({ ...svgProps, mouthVariant: variant })}
-    </svg>`
+      (_svgProps: SvgProps, variant: number) => {
+        return `<div data-mouth-variant="${variant}">
+          ${svg("50", "20", "80 113 40 10")}
+        <div>`;
+      }
     )
   );
   element?.appendChild(editor);
@@ -160,10 +169,6 @@ function getVariantControl(
       preview.classList.add("selected");
     });
     preview.innerHTML = previewCb(svgProps, i + 1);
-    // preview.innerHTML = `<svg width=50 height=20 viewBox="80 120 40 10">
-    //   ${mouth({ ...svgProps, mouthVariant: i + 1 })}
-    // </svg>`;
-
     div.appendChild(preview);
   }
 

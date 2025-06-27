@@ -1,10 +1,12 @@
+export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
+  return `
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="200mm"
-   height="200mm"
-   viewBox="0 0 200 200"
+   width="${width}"
+   height="${height}"
+   viewBox="${viewBox}"
    version="1.1"
    id="svg1"
    inkscape:version="1.4 (e7c3feb1, 2024-10-09)"
@@ -362,3 +364,6 @@
        sodipodi:nodetypes="cccccccccccc" />
   </g>
 </svg>
+
+  `;
+}
