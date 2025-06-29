@@ -1,0 +1,34 @@
+/* Editor */
+.visage-editor {
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .formgroup {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+
+    label {
+      flex: 1;
+    }
+  }
+
+  button {
+    background: white;
+
+    &.selected {
+      border: 2px solid blue;
+    }
+
+    &.choice {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 100%;
+      cursor: pointer;
+    }
+  }
+}

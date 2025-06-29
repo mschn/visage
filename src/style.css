@@ -1,137 +1,44 @@
+@import "./css/editor.css";
+@import "./css/visage.css";
+
+html {
+  font-family: sans-serif;
+  background-color: #fafafa;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.flex-col {
+  flex-direction: column;
+}
+
+#visage {
+  margin: 0 auto;
+}
+
+.w-48 {
+  width: 48px;
+}
+
+.w-128 {
+  width: 128px;
+}
+
+.w-256 {
+  width: 256px;
+}
+
+.w-512 {
+  width: 512px;
+}
+
 .visage {
-  aspect-ratio: 1/ 1;
   border: 3px solid white;
   box-shadow: 2px 2px 5px 1px #0000004d;
   border-radius: 100%;
   overflow: hidden;
-
-  svg {
-    width: 100% !important;
-    height: 100% !important;
-    background-color: var(--backgroundFill);
-
-    * {
-      stroke-width: var(--strokeWidth) !important;
-    }
-
-    #shirt {
-      fill: var(--bodyFill) !important;
-      stroke: var(--bodyStroke) !important;
-    }
-
-    #hair {
-      stroke: var(--hairStroke) !important;
-      fill: var(--hairFill) !important;
-    }
-
-    #eyebrows {
-      stroke: var(--hairStroke) !important;
-      fill: var(--hairFill) !important;
-    }
-
-    #face {
-      stroke: var(--faceStroke) !important;
-      fill: var(--faceFill) !important;
-    }
-
-    #neck {
-      stroke: var(--faceStroke) !important;
-      fill: var(--faceFill) !important;
-    }
-
-    [id^="ear-"] {
-      stroke: var(--faceStroke) !important;
-      fill: var(--faceFill) !important;
-    }
-
-    [id^="mouth-front"] {
-      stroke: var(--faceStroke) !important;
-    }
-
-    [id^="mouth-back"] {
-      fill: var(--mouthFill) !important;
-    }
-
-    [id^="eye-white"] {
-      stroke: var(--faceStroke) !important;
-    }
-
-    [id^="eye-mask"] {
-      fill: var(--faceFill) !important;
-    }
-
-    [id^="eye-iris"] {
-      fill: var(--eyeFill) !important;
-    }
-
-    [id^="eye-outline"] {
-      stroke: var(--faceStroke) !important;
-    }
-
-    #nose {
-      stroke: var(--faceStroke) !important;
-    }
-  }
-}
-
-/* Eyes variants */
-[id^="eyes-"] {
-  display: none !important;
-}
-
-[data-eyes-variant="1"] #eyes-1 {
-  display: inline !important;
-}
-
-[data-eyes-variant="2"] #eyes-2 {
-  display: inline !important;
-}
-
-/* Mouth variants */
-#mouth-1, #mouth-2 {
-  display: none !important;
-}
-
-[data-mouth-variant="1"] #mouth-1 {
-  display: inline !important;
-}
-
-[data-mouth-variant="2"] #mouth-2 {
-  display: inline !important;
-}
-
-
-/* Editor */
-.visage-editor {
-  border: 1px solid #ccc;
-  border-radius: 0.5rem;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-
-  .formgroup {
-    display: flex;
-    gap: 0.5rem;
-    align-items: center;
-
-    label {
-      flex: 1;
-    }
-  }
-
-  button {
-    background: white;
-
-    &.selected {
-      border: 2px solid blue;
-    }
-
-    &.choice {
-      height: 2rem;
-      width: 2rem;
-      border-radius: 100%;
-      cursor: pointer;
-    }
-  }
 }

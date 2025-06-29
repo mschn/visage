@@ -3,31 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <style>
-      html {
-        font-family: sans-serif;
-        background-color: #fafafa;
-      }
-
-      .container {
-        display: flex;
-        flex-direction: row;
-      }
-
-      #visage {
-        width: 256px;
-        margin: 0 auto;
-      }
-    </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visage</title>
   </head>
   <body>
-    <div class="container">
+    <div class="flex">
       <div id="editor"></div>
-      <div id="visage"></div>
+      <div class="flex flex-col">
+        <div>
+          <button id="button-48">48px</button>
+          <button id="button-128">128px</button>
+          <button id="button-256">256px</button>
+          <button id="button-512">512px</button>
+        </div>
+        <div id="visage"></div>
+      </div>
     </div>
 
     <script type="module" src="/src/main.ts"></script>
+    <script type="text/javascript">
+      ["48", "128", "256", "512"].forEach((w) =>
+        document.querySelector(`#button-${w}`).addEventListener("click", () => {
+          const v = document.querySelector("#visage");
+          v.className = `w-${w}`;
+        })
+      );
+    </script>
   </body>
 </html>
