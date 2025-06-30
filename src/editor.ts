@@ -157,16 +157,20 @@ function getVariantControl(
   for (let i = 0; i < VisageVariants.mouth; i++) {
     const preview = document.createElement("button");
     preview.setAttribute("data-preview", key);
+    preview.setAttribute("data-variant", `${i + 1}`);
     if (i + 1 === cfg[key]) {
       preview.classList.add("selected");
     }
     preview.addEventListener("click", () => {
-      onChange({ [key]: i + 1 });
-      const previews = document.querySelectorAll(`button[data-preview=${key}`);
-      for (const preview of previews) {
-        preview.classList.remove("selected");
+      const previews = document.querySelectorAll(`button[data-preview=${key}]`);
+      for (const p of previews) {
+        if (p.getAttribute("data-variant") === `${i + 1}`) {
+          p.classList.add("selected");
+        } else {
+          p.classList.remove("selected");
+        }
       }
-      preview.classList.add("selected");
+      onChange({ [key]: i + 1 });
     });
     preview.innerHTML = previewCb(svgProps, i + 1);
     div.appendChild(preview);
