@@ -8,7 +8,6 @@ const config: VisageConfig = {
   faceFill: "#e9c59e",
   eyesFill: "#2b92b8",
   hairFill: "#623714",
-  strokeWidth: 1.5,
   mouthVariant: 2,
   eyesVariant: 2,
   faceVariant: 1,

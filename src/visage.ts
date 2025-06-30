@@ -26,7 +26,6 @@ export function visage(selector: string, cfg: VisageConfig) {
   element.style.setProperty("--mouthFill", svgProps.mouthFill);
   element.style.setProperty("--hairFill", svgProps.hairFill);
   element.style.setProperty("--hairStroke", svgProps.hairStroke);
-  element.style.setProperty("--strokeWidth", `${svgProps.strokeWidth}`);
   element.style.setProperty("--eyeFill", svgProps.eyesFill);
 
   element.setAttribute("data-eyes-variant", `${cfg.eyesVariant}`);

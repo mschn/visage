@@ -7,7 +7,6 @@ export interface VisageConfig {
   hairFill: string;
   faceVariant: number;
   mouthVariant: number;
-  strokeWidth: number;
 }
 
 export type VisageVariantKeys = Pick<

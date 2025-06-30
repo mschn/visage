@@ -1,4 +1,5 @@
 import { alterHexColor } from "./colors";
+import { decodeConfig, encodeConfig } from "./encode";
 import { svg } from "./svg";
 import {
   VisageColors,
@@ -31,6 +32,7 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
   const editor = document.createElement("div");
   editor.classList.add("visage-editor");
   editor.append(
+    getCodeControl(cfg, onChange),
     getColorControl(cfg, onChange, "backgroundFill", "Background"),
     getColorControl(cfg, onChange, "bodyFill", "Body"),
     getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
@@ -73,6 +75,16 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
     )
   );
   element?.appendChild(editor);
+}
+
+function getCodeControl(cfg: VisageConfig, onChange: VisageEditorCb) {
+  const code = document.createElement("textarea");
+  code.className = "code";
+  encodeConfig(cfg).then((str) => (code.value = str));
+  code.addEventListener("input", () => {
+    decodeConfig(code.value).then((decoded) => onChange(decoded));
+  });
+  return code;
 }
 
 function getColorControl(
