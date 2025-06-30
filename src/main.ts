@@ -11,6 +11,7 @@ const config: VisageConfig = {
   strokeWidth: 1.5,
   mouthVariant: 2,
   eyesVariant: 2,
+  faceVariant: 1,
 };
 
 function render() {
@@ -19,7 +20,6 @@ function render() {
 
 visageEditor("#editor", config, (cfg) => {
   Object.assign(config, cfg);
-  // config = { ...config, ...cfg };
   render();
 });
 

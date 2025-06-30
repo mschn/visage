@@ -5,13 +5,22 @@ export interface VisageConfig {
   eyesVariant: number;
   faceFill: string;
   hairFill: string;
+  faceVariant: number;
   mouthVariant: number;
   strokeWidth: number;
 }
 
-export const VisageVariants = {
-  mouth: 2,
-} as const;
+export type VisageVariantKeys = Pick<
+  VisageConfig,
+  "mouthVariant" | "faceVariant" | "eyesVariant"
+>;
+export type VisageVariantKey = keyof VisageVariantKeys;
+
+export const VisageVariantCount: Record<VisageVariantKey, number> = {
+  eyesVariant: 2,
+  faceVariant: 2,
+  mouthVariant: 2,
+};
 
 export interface SvgProps extends VisageConfig {
   faceStroke: string;

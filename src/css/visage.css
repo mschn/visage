@@ -25,7 +25,7 @@
       fill: var(--hairFill) !important;
     }
 
-    #face {
+    [id^="face-"] {
       stroke: var(--faceStroke) !important;
       fill: var(--faceFill) !important;
     }
@@ -94,5 +94,19 @@
 }
 
 [data-mouth-variant="2"] #mouth-2 {
+  display: inline !important;
+}
+
+/* face variants */
+#face-1,
+#face-2 {
+  display: none !important;
+}
+
+[data-face-variant="1"] #face-1 {
+  display: inline !important;
+}
+
+[data-face-variant="2"] #face-2 {
   display: inline !important;
 }

@@ -2,12 +2,12 @@ import { alterHexColor } from "./colors";
 import { svg } from "./svg";
 import {
   VisageColors,
-  VisageVariants,
-  type NumberKeys,
+  VisageVariantCount,
   type StringKeys,
   type SvgProps,
   type VisageConfig,
   type VisageEditorCb,
+  type VisageVariantKey,
 } from "./types";
 
 export function visageEditor(
@@ -37,13 +37,26 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
     getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
     getColorChoiceControl(cfg, onChange, "eyesFill", "Eyes", VisageColors.eyes),
     getColorChoiceControl(cfg, onChange, "hairFill", "Hair", VisageColors.hair),
+
+    getVariantControl(
+      cfg,
+      onChange,
+      "Face",
+      "faceVariant",
+      (_svgProps: SvgProps, variant: number) => {
+        return `<div data-face-variant="${variant}">
+          ${svg("50", "20", "68 115 60 30")}
+        <div>`;
+      }
+    ),
+
     getVariantControl(
       cfg,
       onChange,
       "Eyes",
       "eyesVariant",
       (_svgProps: SvgProps, variant: number) => {
-        return `<div data-eyes-variant="${variant}">
+        return `<div data-eyes-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "65 76 30 10")}
         <div>`;
       }
@@ -54,7 +67,7 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
       "Mouth",
       "mouthVariant",
       (_svgProps: SvgProps, variant: number) => {
-        return `<div data-mouth-variant="${variant}">
+        return `<div data-mouth-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "80 113 40 10")}
         <div>`;
       }
@@ -136,7 +149,7 @@ function getVariantControl(
   cfg: VisageConfig,
   onChange: VisageEditorCb,
   labelText: string,
-  key: NumberKeys<VisageConfig>,
+  key: VisageVariantKey,
   previewCb: (svgProps: SvgProps, variant: number) => string
 ) {
   const label = document.createElement("label");
@@ -154,7 +167,7 @@ function getVariantControl(
     faceFill: "white",
   };
 
-  for (let i = 0; i < VisageVariants.mouth; i++) {
+  for (let i = 0; i < VisageVariantCount[key]; i++) {
     const preview = document.createElement("button");
     preview.setAttribute("data-preview", key);
     preview.setAttribute("data-variant", `${i + 1}`);

@@ -27,8 +27,8 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      inkscape:zoom="1.3662995"
-     inkscape:cx="343.26296"
-     inkscape:cy="365.58603"
+     inkscape:cx="376.93053"
+     inkscape:cy="331.18654"
      inkscape:window-width="1512"
      inkscape:window-height="916"
      inkscape:window-x="0"
@@ -107,12 +107,22 @@
            inkscape:label="ear" />
       </g>
     </g>
-    <path
-       style="display:inline;fill:#f0bc93;fill-opacity:1;stroke:#b87731;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
-       d="m 56.788009,74.312327 c -0.09657,15.482162 5.355134,37.057993 12.218663,48.724973 7.463446,12.68675 15.41055,17.46755 25.956524,17.17635 3.567108,-0.0452 4.513172,0.1695 7.738634,-0.002 8.43249,-0.44837 18.53694,-3.34038 23.99958,-15.70053 5.73139,-12.96824 12.5345,-33.348117 12.60666,-49.628725 C 139.61661,43.735634 130.65753,22.871237 99.348094,22.742287 67.757031,22.59984 56.712913,41.100183 56.788009,74.312327 Z"
-       id="face"
-       sodipodi:nodetypes="cscssccc"
-       inkscape:label="face" />
+    <g
+       id="g4"
+       inkscape:label="face">
+      <path
+         style="display:inline;fill:#f0bc93;fill-opacity:1;stroke:#b87731;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
+         d="m 56.981659,74.893276 c -0.29022,18.386906 7.131594,32.999334 11.637714,45.626584 2.807502,7.86731 11.277465,11.86764 18.645171,15.88423 7.85615,4.28287 16.020856,4.38549 23.764216,0.3219 6.39411,-3.35552 15.43855,-8.76257 17.99645,-16.28148 4.56638,-13.42283 10.40435,-25.214836 10.28286,-45.562085 C 139.61661,43.735634 130.65753,22.871237 99.348094,22.742287 67.757031,22.59984 56.906563,41.681132 56.981659,74.893276 Z"
+         id="face-2"
+         sodipodi:nodetypes="cssssccc"
+         inkscape:label="face-2" />
+      <path
+         style="display:none;fill:#f0bc93;fill-opacity:1;stroke:#b87731;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
+         d="m 57.097816,74.885256 c -0.09657,15.48217 6.341132,37.982304 12.412312,50.080534 6.346646,12.64716 17.370126,14.85489 29.628514,14.85055 13.468038,-0.005 23.378188,-2.37213 28.840828,-14.73228 5.73139,-12.96824 11.3726,-33.929074 11.44476,-50.209684 C 139.73277,43.727619 130.77369,22.863222 99.464251,22.734272 67.873188,22.591825 57.02272,41.673117 57.097816,74.885256 Z"
+         id="face-1"
+         sodipodi:nodetypes="csssccc"
+         inkscape:label="face-1" />
+    </g>
     <g
        id="mouth"
        inkscape:label="mouth"
