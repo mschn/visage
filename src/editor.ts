@@ -31,7 +31,6 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
   const editor = document.createElement("div");
   editor.classList.add("visage-editor");
   editor.append(
-    getStrokeWidthControl(cfg, onChange),
     getColorControl(cfg, onChange, "backgroundFill", "Background"),
     getColorControl(cfg, onChange, "bodyFill", "Body"),
     getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
@@ -74,23 +73,6 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
     )
   );
   element?.appendChild(editor);
-}
-
-function getStrokeWidthControl(cfg: VisageConfig, onChange: VisageEditorCb) {
-  const input = document.createElement("input");
-  input.type = "number";
-  input.id = "editor-stroke-width";
-  input.value = `${cfg.strokeWidth}`;
-  input.addEventListener("change", () =>
-    onChange({ strokeWidth: Number.parseFloat(input.value) })
-  );
-  const label = document.createElement("label");
-  label.htmlFor = "editor-stroke-width";
-  label.innerHTML = "Stroke width";
-  const div = document.createElement("div");
-  div.classList.add("formgroup");
-  div.append(label, input);
-  return div;
 }
 
 function getColorControl(
