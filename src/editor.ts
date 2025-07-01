@@ -42,11 +42,22 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
     getVariantControl(
       cfg,
       onChange,
-      "Face",
-      "faceVariant",
+      "Hair",
+      "hairVariant",
       (_svgProps: SvgProps, variant: number) => {
-        return `<div data-face-variant="${variant}">
-          ${svg("50", "20", "68 115 60 30")}
+        return `<div data-hair-variant="${variant}" data-face-variant=1>
+          ${svg("50", "20", "65 76 30 10")}
+        <div>`;
+      }
+    ),
+    getVariantControl(
+      cfg,
+      onChange,
+      "Eyebrows",
+      "eyebrowsVariant",
+      (_svgProps: SvgProps, variant: number) => {
+        return `<div data-eyebrows-variant="${variant}" data-face-variant=1>
+          ${svg("50", "20", "65 76 30 10")}
         <div>`;
       }
     ),
@@ -70,6 +81,18 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
       (_svgProps: SvgProps, variant: number) => {
         return `<div data-mouth-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "80 113 40 10")}
+        <div>`;
+      }
+    ),
+
+    getVariantControl(
+      cfg,
+      onChange,
+      "Face",
+      "faceVariant",
+      (_svgProps: SvgProps, variant: number) => {
+        return `<div data-face-variant="${variant}">
+          ${svg("50", "20", "68 115 60 30")}
         <div>`;
       }
     )

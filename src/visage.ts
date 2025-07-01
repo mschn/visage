@@ -31,6 +31,8 @@ export function visage(selector: string, cfg: VisageConfig) {
   element.setAttribute("data-eyes-variant", `${cfg.eyesVariant}`);
   element.setAttribute("data-mouth-variant", `${cfg.mouthVariant}`);
   element.setAttribute("data-face-variant", `${cfg.faceVariant}`);
+  element.setAttribute("data-hair-variant", `${cfg.hairVariant}`);
+  element.setAttribute("data-eyebrows-variant", `${cfg.eyebrowsVariant}`);
 
   element.innerHTML = `
     <div class="visage">${svg()}</div>

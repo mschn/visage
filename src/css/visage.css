@@ -15,12 +15,13 @@
       stroke: var(--bodyStroke) !important;
     }
 
-    #hair {
+
+    [id^="eyebrows-"] {
       stroke: var(--hairStroke) !important;
       fill: var(--hairFill) !important;
     }
 
-    #eyebrows {
+    [id^="hair-"] {
       stroke: var(--hairStroke) !important;
       fill: var(--hairFill) !important;
     }
@@ -108,5 +109,34 @@
 }
 
 [data-face-variant="2"] #face-2 {
+  display: inline !important;
+}
+
+/* hair variants */
+#hair-1,
+#hair-2 {
+  display: none !important;
+}
+
+[data-hair-variant="1"] #hair-1 {
+  display: inline !important;
+}
+
+[data-hair-variant="2"] #hair-2 {
+  display: inline !important;
+}
+
+
+/* eyebrows variants */
+#eyebrows-1,
+#eyebrows-2 {
+  display: none !important;
+}
+
+[data-eyebrows-variant="1"] #eyebrows-1 {
+  display: inline !important;
+}
+
+[data-eyebrows-variant="2"] #eyebrows-2 {
   display: inline !important;
 }
