@@ -46,7 +46,7 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
       "hairVariant",
       (_svgProps: SvgProps, variant: number) => {
         return `<div data-hair-variant="${variant}" data-face-variant=1>
-          ${svg("50", "20", "65 76 30 10")}
+          ${svg("50", "20", "90 15 20 50")}
         <div>`;
       }
     ),
@@ -57,7 +57,7 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
       "eyebrowsVariant",
       (_svgProps: SvgProps, variant: number) => {
         return `<div data-eyebrows-variant="${variant}" data-face-variant=1>
-          ${svg("50", "20", "65 76 30 10")}
+          ${svg("50", "20", "60 70 40 5")}
         <div>`;
       }
     ),
