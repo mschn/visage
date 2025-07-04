@@ -45,8 +45,8 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
         onChange,
         "bodyVariant",
         (_svgProps: SvgProps, variant: number) => {
-          return `<div data-body-variant="${variant}" data-face-variant=1>
-          ${svg("50", "20", "90 15 20 50")}
+          return `<div data-clothing-variant="${variant}" data-face-variant=1>
+          ${svg("50", "20", "90 135 20 50")}
         <div>`;
         }
       ),

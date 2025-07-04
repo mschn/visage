@@ -29,7 +29,7 @@ export const VisageVariantCount: Record<VisageVariantKey, number> = {
   mouthVariant: 2,
   eyebrowsVariant: 3,
   hairVariant: 3,
-  bodyVariant: 3,
+  bodyVariant: 4,
 };
 
 export interface SvgProps extends VisageConfig {

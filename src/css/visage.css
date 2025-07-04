@@ -142,7 +142,8 @@
 /* clothing variants */
 #clothing-1,
 #clothing-2,
-#clothing-3 {
+#clothing-3,
+#clothing-4 {
   display: none !important;
 }
 
@@ -154,6 +155,16 @@
   display: inline !important;
 }
 
-[data-clothing-variant="1"] #clothing-3 {
+[data-clothing-variant="3"] #clothing-3 {
   display: inline !important;
+}
+
+[data-clothing-variant="4"] #clothing-4 {
+  display: inline !important;
+
+  #clothing-4-back,
+  #clothing-4-col {
+    fill: white !important;
+    stroke: #aaa !important;
+  }
 }

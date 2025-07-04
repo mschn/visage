@@ -4,7 +4,7 @@ import { visage, type VisageConfig } from "./visage";
 
 const config: VisageConfig = {
   backgroundFill: "#e1eeff",
-  bodyFill: "#4000e3",
+  bodyFill: "#2e2d4e",
   faceFill: "#e9c59e",
   eyesFill: "#2b92b8",
   hairFill: "#623714",

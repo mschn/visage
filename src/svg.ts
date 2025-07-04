@@ -5,6 +5,7 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
   //    viewBox="${viewBox}"
 
   return `
+  
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
@@ -33,14 +34,14 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="0.79700056"
-     inkscape:cx="268.50671"
-     inkscape:cy="427.2268"
+     inkscape:zoom="1.0255461"
+     inkscape:cx="422.70163"
+     inkscape:cy="480.23196"
      inkscape:window-width="1512"
      inkscape:window-height="916"
-     inkscape:window-x="0"
-     inkscape:window-y="38"
-     inkscape:window-maximized="0"
+     inkscape:window-x="483"
+     inkscape:window-y="1478"
+     inkscape:window-maximized="1"
      inkscape:current-layer="g7"
      showgrid="true"
      showguides="true"
@@ -60,14 +61,55 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
     <g
        id="g7"
        inkscape:label="clothing">
+      <g
+         id="clothing-4"
+         inkscape:label="clothing-4"
+         style="display:inline">
+        <path
+           style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 72.148718,150.83166 25.047855,10.61811 28.859487,-8.7123 16.33556,4.35615 -19.57741,52.27266 -42.588249,-0.29931 -18.423097,-52.51787 z"
+           id="clothing-4-back"
+           sodipodi:nodetypes="cccccccc"
+           inkscape:label="clothing-4-back" />
+        <path
+           style="opacity:1;fill:#656565;fill-opacity:1;stroke:#424242;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 87.964681,168.28003 6.566729,6.24532 8.84059,-0.16826 -8.664167,0.20906 c -1.699776,7.96471 -5.652452,30.13442 -5.306023,37.28066 h 22.52549 c -0.12645,-13.23971 -5.82458,-29.90132 -8.03718,-37.89327 l 5.60697,-3.59672 c -2.69168,-5.57303 -7.34975,-9.13287 -10.765891,-12.15306 -3.519716,2.53182 -7.50497,5.4791 -10.766518,10.07627 z"
+           id="clothing-4-tie"
+           sodipodi:nodetypes="cccccccccc"
+           inkscape:label="clothing-4-tie" />
+        <path
+           style="opacity:1;fill:#656565;fill-opacity:1;stroke:#424242;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 23.513865,165.58031 c 8.620951,-8.26114 30.638998,-8.91911 45.367741,-11.48154 2.344035,15.73066 18.981154,44.98692 26.352054,59.28133 l 11.4631,-0.58752 c 6.06035,-13.81458 21.19119,-41.88766 23.98771,-58.96607 14.98177,2.871 29.25741,2.06611 44.77648,10.31011 10.58516,15.78005 9.67937,29.53039 13.27272,44.77261 l -173.867506,4.5533 c 1.560393,-17.04624 0.250567,-31.41121 8.647701,-47.88222 z"
+           id="clothing-4-suit"
+           sodipodi:nodetypes="ccccccccc"
+           inkscape:label="clothing-4-suit" />
+        <path
+           style="opacity:1;fill:#ffffff;fill-opacity:1;stroke:#bebebe;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 74.404436,145.48047 c 8.069955,7.33962 15.910415,11.50002 25.514731,12.70219 6.002573,-0.82956 13.852513,-5.83573 25.225113,-12.80247 l 3.34318,10.34676 c -7.64544,7.804 -9.73092,11.80341 -16.48759,18.44183 -2.55079,-5.41946 -6.56679,-10.83892 -13.169741,-16.25838 -7.174293,4.54518 -11.893363,9.86569 -13.925971,16.03456 -6.424448,-6.08625 -6.700898,-11.37195 -13.087346,-18.49248 z"
+           id="clothing-4-col"
+           sodipodi:nodetypes="ccccccccc"
+           inkscape:label="clothing-4-col" />
+        <path
+           style="fill:#656565;fill-opacity:1;stroke:#424242;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 106.21379,212.38314 c 6.85817,-12.3367 15.38251,-44.48728 20.74129,-63.57128 4.51841,2.52556 8.92915,5.12291 15.61497,6.20353 l 6.78632,15.86835 -13.57264,-0.90955 12.67855,5.95878 -26.61395,36.16263 z"
+           id="clothing-4-wing-r"
+           sodipodi:nodetypes="cccccccc"
+           inkscape:label="clothing-4-wing-r" />
+        <path
+           style="opacity:1;fill:#656565;fill-opacity:1;stroke:#424242;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+           d="m 94.725893,212.43131 c -6.858172,-12.3367 -16.20123,-45.24839 -21.560001,-64.33239 -5.840575,3.6034 -10.675657,5.13582 -15.699016,6.28757 l -6.786324,15.86835 13.572645,-0.90955 -12.678553,5.95878 27.065326,37.06539 z"
+           id="clothing-4-wing-l"
+           sodipodi:nodetypes="cccccccc"
+           inkscape:label="clothing-4-wing-l" />
+      </g>
       <path
          style="display:none;fill:#003152;fill-opacity:1;stroke:#006db8;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
          d="m 67.155298,153.40938 c 3.59693,16.96814 18.87338,33.17594 32.71255,42.85081 12.728972,-9.18373 29.915012,-26.1308 33.338022,-42.61487 15.62794,1.95349 35.04859,5.03279 40.94283,10.17873 6.39735,5.96963 13.00856,25.81126 13.88009,35.98926 L 15.453114,199.35063 c 0.107567,-8.38381 5.405958,-28.49195 12.229091,-36.13426 7.778899,-6.13665 21.079208,-8.15847 39.473093,-9.80699 z"
-         id="clothing-2-9"
+         id="clothing-3"
          inkscape:label="clothing-3"
          sodipodi:nodetypes="cccccccc" />
       <path
-         style="display:inline;fill:#003152;fill-opacity:1;stroke:#006db8;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
+         style="display:none;fill:#003152;fill-opacity:1;stroke:#006db8;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
          d="m 66.395014,153.2126 c 3.59693,16.96814 14.75291,26.73771 35.030316,26.62646 14.40292,0.0873 27.59725,-9.90645 31.02026,-26.39052 15.62794,1.95349 35.04859,5.03279 40.94283,10.17873 6.39735,5.96963 13.00856,25.81126 13.88009,35.98926 L 14.69283,199.15385 c 0.107567,-8.38381 5.405958,-28.49195 12.229091,-36.13426 7.778899,-6.13665 21.079208,-8.15847 39.473093,-9.80699 z"
          id="clothing-2"
          inkscape:label="clothing-2"
@@ -414,6 +456,7 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
          inkscape:label="eyebrows-1" />
     </g>
   </g>
-</svg>
+
+  
   `;
 }
