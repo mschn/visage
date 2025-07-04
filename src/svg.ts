@@ -1,11 +1,5 @@
 export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
-  // <svg
-  //    width="${width}"
-  //    height="${height}"
-  //    viewBox="${viewBox}"
-
   return `
-  
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
@@ -34,15 +28,15 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
      inkscape:pagecheckerboard="false"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.0255461"
-     inkscape:cx="422.70163"
-     inkscape:cy="480.23196"
+     inkscape:zoom="0.88537935"
+     inkscape:cx="450.08956"
+     inkscape:cy="372.15686"
      inkscape:window-width="1512"
      inkscape:window-height="916"
      inkscape:window-x="483"
      inkscape:window-y="1478"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g7"
+     inkscape:current-layer="layer1"
      showgrid="true"
      showguides="true"
      inkscape:lockguides="false" />
@@ -51,7 +45,24 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
   <g
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
-     id="layer1">
+     id="layer1"
+     style="display:inline">
+    <g
+       id="hair-back"
+       inkscape:label="hair-back">
+      <path
+         style="display:none;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         d="M 57.86244,54.053136 C 46.00276,98.807951 48.369936,140.04146 40.268655,167.68589 l 119.904435,2.70462 C 147.78485,132.23842 151.56057,100.49809 138.24562,53.849952 Z"
+         id="hair-back-2"
+         sodipodi:nodetypes="ccccc"
+         inkscape:label="hair-back-2" />
+      <path
+         style="display:none;opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         d="m 58.943384,51.758479 c -9.31,20.648031 -12.96506,53.846501 -8.118837,75.689881 30.682449,14.25797 64.203863,16.00494 94.990973,1.2306 4.36072,-26.59865 1.36874,-57.084166 -8.61609,-77.472422 z"
+         id="hair-back-1"
+         inkscape:label="hair-back-1"
+         sodipodi:nodetypes="ccccc" />
+    </g>
     <path
        style="display:inline;fill:#f0bc93;fill-opacity:1;stroke:#b87731;stroke-width:1;stroke-linecap:round;stroke-opacity:1"
        d="m 75.856195,116.87009 c 0.248293,17.35831 0.772081,30.6623 -4.71391,35.47248 -6.030282,5.2788 -41.969419,4.60869 -40.584978,10.33317 4.263895,17.63062 18.45838,35.77819 39.294097,35.5623 12.258062,-0.12701 38.470576,0.67972 60.286316,-0.57886 17.91719,-1.03368 35.69529,-13.82776 35.90022,-35.54561 0.0512,-5.43076 -34.01524,-3.57206 -39.44407,-10.23425 -3.20623,-5.26048 -4.83825,-17.53936 -5.08763,-34.70078 z"
@@ -433,7 +444,7 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
          inkscape:label="hair-2"
          sodipodi:nodetypes="ccccccc" />
       <path
-         style="opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-opacity:1"
          d="m 83.167603,39.572758 c -4.158143,5.380133 -5.547725,10.760267 -6.627096,16.1404 -6.4294,0.502872 -12.315968,2.272352 -17.703247,5.206839 -2.998146,10.272193 -1.386702,21.962722 0,33.584099 -4.599373,-11.203573 -6.59334,-23.148222 -8.457037,-34.104982 1.009479,-13.450446 2.81141,-27.345986 9.368136,-34.755937 9.024258,-9.014507 30.674043,-11.301946 37.489227,-9.892991 9.334734,-1.297495 24.296814,-0.156889 36.578334,10.934358 5.54676,8.657485 9.77158,18.886201 10.15054,32.022446 -0.0742,0.508946 -0.14631,1.010878 -0.21655,1.506032 -2.09351,14.757756 -2.51373,23.494673 -6.02906,32.46868 -0.62156,-12.201013 -0.60792,-22.231843 -4.16547,-34.625468 l -23.17043,1.822395 c -2.55349,-7.289572 -3.86165,-14.579145 -4.68615,-21.868717 -0.60459,6.966833 -1.24469,13.938738 0.52068,20.567006 -8.048409,0.324933 -15.988932,0.541981 -23.691111,0.520684 -0.639608,-4.278181 -2.916218,-4.27497 0.639234,-19.524844 z"
          id="hair-1"
          sodipodi:nodetypes="cccccccccsccccccc"
@@ -456,7 +467,6 @@ export function svg(width = "100%", height = "100%", viewBox = "0 0 200 200") {
          inkscape:label="eyebrows-1" />
     </g>
   </g>
-
-  
+</svg>
   `;
 }

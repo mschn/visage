@@ -64,6 +64,16 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
         <div>`;
         }
       ),
+      getVariantControl(
+        cfg,
+        onChange,
+        "hairBackVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-hair-back-variant="${variant}" data-face-variant=1>
+          ${svg("50", "20", "90 100 20 50")}
+        <div>`;
+        }
+      ),
     ]),
 
     getBlock("Eyebrows", [
@@ -200,7 +210,7 @@ function getVariantControl(
 
   const svgProps: SvgProps = {
     ...cfg,
-    faceStroke: alterHexColor(cfg.skinFill, 0.2),
+    skinStroke: alterHexColor(cfg.skinFill, 0.2),
     clothingStroke: alterHexColor(cfg.clothingFill),
     hairStroke: alterHexColor(cfg.hairFill, -0.1),
     mouthFill: alterHexColor(cfg.skinFill, 0.1),

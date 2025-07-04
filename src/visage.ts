@@ -1,6 +1,6 @@
 import { alterHexColor } from "./colors";
 import { svg } from "./svg";
-import type { SvgProps, VisageConfig } from "./types";
+import { type SvgProps, type VisageConfig } from "./types";
 
 export * from "./types";
 
@@ -12,7 +12,7 @@ export function visage(selector: string, cfg: VisageConfig) {
 
   const svgProps: SvgProps = {
     ...cfg,
-    faceStroke: alterHexColor(cfg.skinFill, 0.2),
+    skinStroke: alterHexColor(cfg.skinFill, 0.2),
     clothingStroke: alterHexColor(cfg.clothingFill),
     hairStroke: alterHexColor(cfg.hairFill, 0.1),
     mouthFill: alterHexColor(cfg.skinFill, 0.1),
@@ -22,7 +22,7 @@ export function visage(selector: string, cfg: VisageConfig) {
   element.style.setProperty("--clothingFill", svgProps.clothingFill);
   element.style.setProperty("--clothingStroke", svgProps.clothingStroke);
   element.style.setProperty("--skinFill", svgProps.skinFill);
-  element.style.setProperty("--faceStroke", svgProps.faceStroke);
+  element.style.setProperty("--skinStroke", svgProps.skinStroke);
   element.style.setProperty("--mouthFill", svgProps.mouthFill);
   element.style.setProperty("--hairFill", svgProps.hairFill);
   element.style.setProperty("--hairStroke", svgProps.hairStroke);
@@ -32,6 +32,7 @@ export function visage(selector: string, cfg: VisageConfig) {
   element.setAttribute("data-mouth-variant", `${cfg.mouthVariant}`);
   element.setAttribute("data-face-variant", `${cfg.faceVariant}`);
   element.setAttribute("data-hair-variant", `${cfg.hairVariant}`);
+  element.setAttribute("data-hair-back-variant", `${cfg.hairBackVariant}`);
   element.setAttribute("data-eyebrows-variant", `${cfg.eyebrowsVariant}`);
   element.setAttribute("data-clothing-variant", `${cfg.clothingVariant}`);
 

@@ -26,22 +26,22 @@
     }
 
     [id^="face-"] {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
       fill: var(--skinFill) !important;
     }
 
     #neck {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
       fill: var(--skinFill) !important;
     }
 
     [id^="ear-"] {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
       fill: var(--skinFill) !important;
     }
 
     [id^="mouth-front"] {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
     }
 
     [id^="mouth-back"] {
@@ -49,7 +49,7 @@
     }
 
     [id^="eye-white"] {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
     }
 
     [id^="eye-mask"] {
@@ -61,11 +61,11 @@
     }
 
     [id^="eye-outline"] {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
     }
 
     #nose {
-      stroke: var(--faceStroke) !important;
+      stroke: var(--skinStroke) !important;
     }
   }
 }
@@ -122,6 +122,20 @@
 }
 
 [data-hair-variant="2"] #hair-2 {
+  display: inline !important;
+}
+
+/* hair back */
+#hair-back-1,
+#hair-back-2 {
+  display: none !important;
+}
+
+[data-hair-back-variant="1"] #hair-back-1 {
+  display: inline !important;
+}
+
+[data-hair-back-variant="2"] #hair-back-2 {
   display: inline !important;
 }
 
