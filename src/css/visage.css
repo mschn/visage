@@ -11,8 +11,8 @@
     }
 
     [id^="clothing-"] {
-      fill: var(--bodyFill) !important;
-      stroke: var(--bodyStroke) !important;
+      fill: var(--clothingFill) !important;
+      stroke: var(--clothingStroke) !important;
     }
 
     [id^="eyebrows-"] {
@@ -27,17 +27,17 @@
 
     [id^="face-"] {
       stroke: var(--faceStroke) !important;
-      fill: var(--faceFill) !important;
+      fill: var(--skinFill) !important;
     }
 
     #neck {
       stroke: var(--faceStroke) !important;
-      fill: var(--faceFill) !important;
+      fill: var(--skinFill) !important;
     }
 
     [id^="ear-"] {
       stroke: var(--faceStroke) !important;
-      fill: var(--faceFill) !important;
+      fill: var(--skinFill) !important;
     }
 
     [id^="mouth-front"] {
@@ -53,7 +53,7 @@
     }
 
     [id^="eye-mask"] {
-      fill: var(--faceFill) !important;
+      fill: var(--skinFill) !important;
     }
 
     [id^="eye-iris"] {

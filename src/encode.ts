@@ -3,8 +3,8 @@ import type { VisageConfig } from "./types";
 export async function encodeConfig(config: VisageConfig) {
   const str = [
     config.backgroundFill.substring(1),
-    config.bodyFill.substring(1),
-    config.faceFill.substring(1),
+    config.clothingFill.substring(1),
+    config.skinFill.substring(1),
     config.eyesFill.substring(1),
     config.hairFill.substring(1),
     config.hairVariant,
@@ -12,6 +12,7 @@ export async function encodeConfig(config: VisageConfig) {
     config.eyesVariant,
     config.mouthVariant,
     config.faceVariant,
+    config.clothingVariant
   ].join(",");
   const compressed = await compressString(str);
   // TODO is gzip really efficient at this size
@@ -28,8 +29,8 @@ export async function decodeConfig(config: string): Promise<VisageConfig> {
   // TODO add some validation here and use default value when values are invalid
   return {
     backgroundFill: s[0],
-    bodyFill: s[1],
-    faceFill: s[2],
+    clothingFill: s[1],
+    skinFill: s[2],
     eyesFill: s[3],
     hairFill: s[4],
     hairVariant: parseInt(s[5]),
@@ -37,6 +38,7 @@ export async function decodeConfig(config: string): Promise<VisageConfig> {
     mouthVariant: parseInt(s[7]),
     eyesVariant: parseInt(s[8]),
     faceVariant: parseInt(s[9]),
+    clothingVariant: parseInt(s[10]),
   };
 }
 

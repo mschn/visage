@@ -1,15 +1,15 @@
 export interface VisageConfig {
   backgroundFill: string;
-  bodyFill: string;
+  clothingFill: string;
   eyesFill: string;
   eyesVariant: number;
-  faceFill: string;
+  skinFill: string;
   hairFill: string;
   faceVariant: number;
   mouthVariant: number;
   eyebrowsVariant: number;
   hairVariant: number;
-  bodyVariant: number;
+  clothingVariant: number;
 }
 
 export type VisageVariantKeys = Pick<
@@ -19,7 +19,7 @@ export type VisageVariantKeys = Pick<
   | "eyesVariant"
   | "eyebrowsVariant"
   | "hairVariant"
-  | "bodyVariant"
+  | "clothingVariant"
 >;
 export type VisageVariantKey = keyof VisageVariantKeys;
 
@@ -29,12 +29,12 @@ export const VisageVariantCount: Record<VisageVariantKey, number> = {
   mouthVariant: 2,
   eyebrowsVariant: 3,
   hairVariant: 3,
-  bodyVariant: 4,
+  clothingVariant: 4,
 };
 
 export interface SvgProps extends VisageConfig {
   faceStroke: string;
-  bodyStroke: string;
+  clothingStroke: string;
   mouthFill: string;
   hairStroke: string;
 }
@@ -42,7 +42,7 @@ export interface SvgProps extends VisageConfig {
 export const VisageColors = {
   skin: ["#e9c59e", "#ffcebb", "#e29a7e", "#8a4d35"],
   eyes: ["#47220e", "#ad6325", "#2b92b8", "#19a051"],
-  hair: ["#230f04", "#623714", "#a37c30", "#a24c0b"],
+  hair: ["#230f04", "#623714", "#a37c30", "#a24c0b", "#6f6f6f", "#b0b0b0"],
 };
 
 export type VisageEditorCb = (config: Partial<VisageConfig>) => void;

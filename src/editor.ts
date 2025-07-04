@@ -38,12 +38,12 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
       getColorControl(cfg, onChange, "backgroundFill", "Color"),
     ]),
 
-    getBlock("Body", [
-      getColorControl(cfg, onChange, "bodyFill", "Color"),
+    getBlock("Clothing", [
+      getColorControl(cfg, onChange, "clothingFill", "Color"),
       getVariantControl(
         cfg,
         onChange,
-        "bodyVariant",
+        "clothingVariant",
         (_svgProps: SvgProps, variant: number) => {
           return `<div data-clothing-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "90 135 20 50")}
@@ -107,7 +107,7 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
     ]),
 
     getBlock("Face", [
-      getColorChoiceControl(cfg, onChange, "faceFill", VisageColors.skin),
+      getColorChoiceControl(cfg, onChange, "skinFill", VisageColors.skin),
       getVariantControl(
         cfg,
         onChange,
@@ -200,11 +200,11 @@ function getVariantControl(
 
   const svgProps: SvgProps = {
     ...cfg,
-    faceStroke: alterHexColor(cfg.faceFill, 0.2),
-    bodyStroke: alterHexColor(cfg.bodyFill),
+    faceStroke: alterHexColor(cfg.skinFill, 0.2),
+    clothingStroke: alterHexColor(cfg.clothingFill),
     hairStroke: alterHexColor(cfg.hairFill, -0.1),
-    mouthFill: alterHexColor(cfg.faceFill, 0.1),
-    faceFill: "white",
+    mouthFill: alterHexColor(cfg.skinFill, 0.1),
+    skinFill: "white",
   };
 
   for (let i = 0; i < VisageVariantCount[key]; i++) {
