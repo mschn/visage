@@ -9,6 +9,7 @@ export interface VisageConfig {
   mouthVariant: number;
   eyebrowsVariant: number;
   hairVariant: number;
+  bodyVariant: number;
 }
 
 export type VisageVariantKeys = Pick<
@@ -18,6 +19,7 @@ export type VisageVariantKeys = Pick<
   | "eyesVariant"
   | "eyebrowsVariant"
   | "hairVariant"
+  | "bodyVariant"
 >;
 export type VisageVariantKey = keyof VisageVariantKeys;
 
@@ -27,6 +29,7 @@ export const VisageVariantCount: Record<VisageVariantKey, number> = {
   mouthVariant: 2,
   eyebrowsVariant: 3,
   hairVariant: 3,
+  bodyVariant: 3,
 };
 
 export interface SvgProps extends VisageConfig {

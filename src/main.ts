@@ -13,6 +13,7 @@ const config: VisageConfig = {
   faceVariant: 1,
   eyebrowsVariant: 1,
   hairVariant: 1,
+  bodyVariant: 1,
 };
 
 function render() {

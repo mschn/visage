@@ -33,71 +33,103 @@ function render(selector: string, cfg: VisageConfig, onChange: VisageEditorCb) {
   editor.classList.add("visage-editor");
   editor.append(
     getCodeControl(cfg, onChange),
-    getColorControl(cfg, onChange, "backgroundFill", "Background"),
-    getColorControl(cfg, onChange, "bodyFill", "Body"),
-    getColorChoiceControl(cfg, onChange, "faceFill", "Skin", VisageColors.skin),
-    getColorChoiceControl(cfg, onChange, "eyesFill", "Eyes", VisageColors.eyes),
-    getColorChoiceControl(cfg, onChange, "hairFill", "Hair", VisageColors.hair),
 
-    getVariantControl(
-      cfg,
-      onChange,
-      "Hair",
-      "hairVariant",
-      (_svgProps: SvgProps, variant: number) => {
-        return `<div data-hair-variant="${variant}" data-face-variant=1>
+    getBlock("Background", [
+      getColorControl(cfg, onChange, "backgroundFill", "Color"),
+    ]),
+
+    getBlock("Body", [
+      getColorControl(cfg, onChange, "bodyFill", "Color"),
+      getVariantControl(
+        cfg,
+        onChange,
+        "bodyVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-body-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "90 15 20 50")}
         <div>`;
-      }
-    ),
-    getVariantControl(
-      cfg,
-      onChange,
-      "Eyebrows",
-      "eyebrowsVariant",
-      (_svgProps: SvgProps, variant: number) => {
-        return `<div data-eyebrows-variant="${variant}" data-face-variant=1>
+        }
+      ),
+    ]),
+
+    getBlock("Hair", [
+      getColorChoiceControl(cfg, onChange, "hairFill", VisageColors.hair),
+      getVariantControl(
+        cfg,
+        onChange,
+        "hairVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-hair-variant="${variant}" data-face-variant=1>
+          ${svg("50", "20", "90 15 20 50")}
+        <div>`;
+        }
+      ),
+    ]),
+
+    getBlock("Eyebrows", [
+      getVariantControl(
+        cfg,
+        onChange,
+        "eyebrowsVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-eyebrows-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "60 70 40 5")}
         <div>`;
-      }
-    ),
+        }
+      ),
+    ]),
 
-    getVariantControl(
-      cfg,
-      onChange,
-      "Eyes",
-      "eyesVariant",
-      (_svgProps: SvgProps, variant: number) => {
-        return `<div data-eyes-variant="${variant}" data-face-variant=1>
+    getBlock("Eyes", [
+      getColorChoiceControl(cfg, onChange, "eyesFill", VisageColors.eyes),
+      getVariantControl(
+        cfg,
+        onChange,
+        "eyesVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-eyes-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "65 76 30 10")}
         <div>`;
-      }
-    ),
-    getVariantControl(
-      cfg,
-      onChange,
-      "Mouth",
-      "mouthVariant",
-      (_svgProps: SvgProps, variant: number) => {
-        return `<div data-mouth-variant="${variant}" data-face-variant=1>
+        }
+      ),
+    ]),
+
+    getBlock("Mouth", [
+      getVariantControl(
+        cfg,
+        onChange,
+        "mouthVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-mouth-variant="${variant}" data-face-variant=1>
           ${svg("50", "20", "80 113 40 10")}
         <div>`;
-      }
-    ),
+        }
+      ),
+    ]),
 
-    getVariantControl(
-      cfg,
-      onChange,
-      "Face",
-      "faceVariant",
-      (_svgProps: SvgProps, variant: number) => {
-        return `<div data-face-variant="${variant}">
+    getBlock("Face", [
+      getColorChoiceControl(cfg, onChange, "faceFill", VisageColors.skin),
+      getVariantControl(
+        cfg,
+        onChange,
+        "faceVariant",
+        (_svgProps: SvgProps, variant: number) => {
+          return `<div data-face-variant="${variant}">
           ${svg("50", "20", "68 115 60 30")}
         <div>`;
-      }
-    )
+        }
+      ),
+    ])
   );
   element?.appendChild(editor);
+}
+
+function getBlock(titleStr: string, nodes: HTMLElement[]) {
+  const block = document.createElement("div");
+  block.className = "block";
+  const title = document.createElement("h3");
+  title.innerHTML = titleStr;
+  block.append(title, ...nodes);
+  return block;
 }
 
 function getCodeControl(cfg: VisageConfig, onChange: VisageEditorCb) {
@@ -136,15 +168,10 @@ function getColorChoiceControl(
   cfg: VisageConfig,
   onChange: VisageEditorCb,
   key: StringKeys<VisageConfig>,
-  labelText: string,
   colors: string[]
 ) {
   const div = document.createElement("div");
   div.classList.add("formgroup");
-
-  const label = document.createElement("label");
-  label.innerHTML = labelText;
-  div.appendChild(label);
 
   for (const color of colors) {
     const button = document.createElement("button");
@@ -165,15 +192,11 @@ function getColorChoiceControl(
 function getVariantControl(
   cfg: VisageConfig,
   onChange: VisageEditorCb,
-  labelText: string,
   key: VisageVariantKey,
   previewCb: (svgProps: SvgProps, variant: number) => string
 ) {
-  const label = document.createElement("label");
-  label.innerHTML = labelText;
   const div = document.createElement("div");
   div.classList.add("formgroup");
-  div.append(label);
 
   const svgProps: SvgProps = {
     ...cfg,
